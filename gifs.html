@@ -14,10 +14,24 @@
       <a href="images.html">Images</a>
     </nav>
   </header>
-  <div class="gallery">
-    <img src="media/gifs/gif1.gif" alt="GIF 1" />
-    <img src="media/gifs/gif2.gif" alt="GIF 2" />
-    <!-- Add more gifs here -->
-  </div>
+  <div class="gallery" id="gif-gallery"></div>
+  <script>
+    fetch('media/gifs/')
+      .then(res => res.text())
+      .then(text => {
+        const parser = new DOMParser();
+        const html = parser.parseFromString(text, 'text/html');
+        const files = [...html.querySelectorAll('a')]
+          .map(a => a.href)
+          .filter(href => href.endsWith('.gif'));
+        const gallery = document.getElementById('gif-gallery');
+        files.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = 'Gallery GIF';
+          gallery.appendChild(img);
+        });
+      });
+  </script>
 </body>
 </html>
