@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  margin: 2rem 0;
+  margin: 2rem 0 1rem;
   text-align: center;
 }
 
@@ -18,6 +18,22 @@ h1 {
   background: linear-gradient(to right, #ffffffaa, #ffffff33);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: #ffffffcc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
 }
 
 .gallery {
@@ -42,4 +58,18 @@ h1 {
 
 .gallery img:hover {
   transform: scale(1.05);
+}
+
+.about {
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
